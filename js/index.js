@@ -7,7 +7,7 @@ let i = 0;
 function displayData(cardTitle,cardPrice,cardQuantity,total){
 
   i++ ;
-
+  
   const tableBody = document.getElementById('table-body');
 
   const rowElements = document.createElement('tr');
@@ -23,6 +23,7 @@ function displayData(cardTitle,cardPrice,cardQuantity,total){
   `;
 
   tableBody.appendChild(rowElements);
+
 }
 
 //serial of total function
@@ -36,6 +37,7 @@ function totals() {
   document.getElementById('total-product').innerText = count;
 }
 
+//product details
 
 // first card
 
@@ -135,6 +137,11 @@ document.getElementById('fifth-card-btn').addEventListener('click',function(){
   const fifthCardQuantity = document.getElementById('fifth-card-inputbtn-two').value;
 
   const fifthCardQuantityInNumber = parseInt(fifthCardQuantity);
+
+  if(fifthCardPrice === "" || fifthCardQuantity === "") {
+
+    alert('Please enter valid input')
+  }
 
   const total = fifthCardQuantityInNumber * fifthCardPriceInNumber ;
 
