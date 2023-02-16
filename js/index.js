@@ -30,11 +30,20 @@ function displayData(cardTitle,cardPrice,cardQuantity,total){
 
 let count = 0;
 
-function totals() {
+let cost = 0;
+
+function totals(value) {
 
   count++;
 
   document.getElementById('total-product').innerText = count;
+
+  cost = cost + value;
+
+  const totalCost = document.getElementById('total-cost');
+
+  totalCost.innerText = cost;
+
 }
 
 //product details
@@ -54,9 +63,11 @@ document.getElementById('first-card-btn').addEventListener('click',function(){
 
   const total = firstCardQuantityInNumber * firstCardPriceInNumber ;
 
-  totals();
+  totals(total);
 
   displayData(firstCardTitle,firstCardPrice,firstCardQuantity,total);
+
+  document.getElementById('first-card-btn').setAttribute('disabled',true);
 
 });
 
@@ -75,10 +86,11 @@ document.getElementById('second-card-btn').addEventListener('click',function(){
 
   const total = secondCardQuantityInNumber + secondCardPriceInNumber ;
 
-  totals();
+  totals(total);
 
   displayData(secondCardTitle,secondCardPrice,secondCardQuantity,total);
 
+  document.getElementById('second-card-btn').setAttribute('disabled',true);
 });
 
 // third card
@@ -96,10 +108,11 @@ document.getElementById('third-card-btn').addEventListener('click',function(){
 
   const total = thirdCardPriceInNumber - thirdCardQuantityInNumber ;
 
-  totals();
+  totals(total);
 
   displayData(thirdCardTitle,thirdCardPrice,thirdCardQuantity,total);
 
+  document.getElementById('three-card-btn').setAttribute('disabled',true);
 });
 
 
@@ -118,9 +131,11 @@ document.getElementById('fourth-card-btn').addEventListener('click',function(){
 
   const total =fourthCardPriceInNumber / fourthCardQuantityInNumber ;
 
-  totals();
+  totals(total);
 
   displayData(fourthCardTitle,fourthCardPrice,fourthCardQuantity,total);
+
+  document.getElementById('fourth-card-btn').setAttribute('disabled',true);
 
 });
 
@@ -145,8 +160,10 @@ document.getElementById('fifth-card-btn').addEventListener('click',function(){
 
   const total = fifthCardQuantityInNumber * fifthCardPriceInNumber ;
 
-  totals();
+  totals(total);
 
   displayData(fifthCardTitle,fifthCardPrice,fifthCardQuantity,total);
+
+  document.getElementById('fifth-card-btn').setAttribute('disabled',true);
 
 });
