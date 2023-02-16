@@ -1,3 +1,5 @@
+// function
+
 let i = 0;
 
 function displayData(cardTitle,cardPrice,cardQuantity,total){
@@ -31,7 +33,9 @@ function totals() {
 }
 
 
-document.getElementById('first-card').addEventListener('click',function(){
+// first card
+
+document.getElementById('first-card-btn').addEventListener('click',function(){
 
   const firstCardTitle = document.getElementById('first-card-title').innerText;
 
@@ -47,5 +51,26 @@ document.getElementById('first-card').addEventListener('click',function(){
   totals();
 
   displayData(firstCardTitle,firstCardPrice,firstCardQuantity,total);
+
+});
+
+// second card
+
+document.getElementById('second-card-btn').addEventListener('click',function(){
+
+  const secondCardTitle = document.getElementById('second-card-title').innerText;
+
+  const secondCardPrice = document.getElementById('second-card-price').innerText;
+  const secondCardPriceInNumber = parseInt(secondCardPrice);
+
+  const secondCardQuantity = document.getElementById('second-card-quantity').innerText;
+
+  const secondCardQuantityInNumber = parseInt(secondCardQuantity);
+
+  const total = secondCardQuantityInNumber + secondCardPriceInNumber ;
+
+  totals();
+
+  displayData(secondCardTitle,secondCardPrice,secondCardQuantity,total);
 
 });
