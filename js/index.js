@@ -112,7 +112,7 @@ document.getElementById('third-card-btn').addEventListener('click',function(){
 
   displayData(thirdCardTitle,thirdCardPrice,thirdCardQuantity,total);
 
-  document.getElementById('three-card-btn').setAttribute('disabled',true);
+  document.getElementById('third-card-btn').setAttribute('disabled',true);
 });
 
 
