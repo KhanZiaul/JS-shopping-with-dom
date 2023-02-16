@@ -156,7 +156,7 @@ document.getElementById('fifth-card-btn').addEventListener('click',function(){
 
   const fifthCardQuantityInNumber = parseInt(fifthCardQuantity);
 
-  if(fifthCardPrice === "" || fifthCardQuantity === ""  || typeof(parseInt(fifthCardPrice))!== 'number' || typeof(parseInt(fifthCardQuantity))!=='number') {
+  if(fifthCardPrice === "" || fifthCardQuantity === ""  || typeof(parseInt(fifthCardPrice))!== 'number' || typeof(parseInt(fifthCardQuantity))!=='number'|| fifthCardPrice < 1 || fifthCardQuantity <1 ) {
 
     alert('Please enter valid input');
 
