@@ -139,6 +139,7 @@ document.getElementById('fourth-card-btn').addEventListener('click',function(){
 
 });
 
+
 // fifth card
 
 document.getElementById('fifth-card-btn').addEventListener('click',function(){
@@ -151,18 +152,22 @@ document.getElementById('fifth-card-btn').addEventListener('click',function(){
 
   const fifthCardQuantity = document.getElementById('fifth-card-inputbtn-two').value;
 
+  console.log(typeof(fifthCardQuantity));
+
   const fifthCardQuantityInNumber = parseInt(fifthCardQuantity);
 
-  if(fifthCardPrice === "" || fifthCardQuantity === "") {
+  if(fifthCardPrice === "" || fifthCardQuantity === ""  || typeof(parseInt(fifthCardPrice))!== 'number' || typeof(parseInt(fifthCardQuantity))!=='number') {
 
-    alert('Please enter valid input')
+    alert('Please enter valid input');
+
+    return 0;
   }
 
-  const total = fifthCardQuantityInNumber * fifthCardPriceInNumber ;
+  const total = fifthCardQuantityInNumber + fifthCardPriceInNumber ;
 
   totals(total);
 
-  displayData(fifthCardTitle,fifthCardPrice,fifthCardQuantity,total);
+  displayData(fifthCardTitle,fifthCardPriceInNumber,fifthCardQuantityInNumber,total);
 
   document.getElementById('fifth-card-btn').setAttribute('disabled',true);
 
